@@ -104,7 +104,7 @@ def train_coop(data_loader, val_loaders, model, optim, sched, args, cfg, epoch, 
             model.module.image_encoder.train()
     
     if args.imbalanced == 1:
-        criterion = AsymmetricLoss_imbalanced(cfg.TRAINER.COOP_MLC.ASL_GAMMA_NEG, cfg.TRAINER.COOP_MLC.ASL_GAMMA_POS, cfg.reweigh_n, cfg.DATASET.NAME)
+        criterion = AsymmetricLoss_imbalanced(cfg, cfg.TRAINER.COOP_MLC.ASL_GAMMA_NEG, cfg.TRAINER.COOP_MLC.ASL_GAMMA_POS, cfg.reweigh_n, cfg.DATASET.NAME)
     else:
         criterion = AsymmetricLoss(cfg.TRAINER.COOP_MLC.ASL_GAMMA_NEG, cfg.TRAINER.COOP_MLC.ASL_GAMMA_POS)
     criterion2 = AsymmetricLoss2(cfg.TRAINER.COOP_MLC.ASL_GAMMA_NEG, cfg.TRAINER.COOP_MLC.ASL_GAMMA_POS)
