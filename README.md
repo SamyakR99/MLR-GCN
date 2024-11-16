@@ -19,9 +19,6 @@ pip install randaugment
 And follow [the link](https://github.com/KaiyangZhou/Dassl.pytorch) to install `dassl`.
 
 
-python train.py --config_file configs/models/rn101_ep50.yaml --datadir /home/samyakr2/multilabel/data/VOC2007/VOCdevkit/VOC2007/ --dataset_config_file /home/samyakr2/SHOP/DualCoOp/configs/datasets/voc2007.yaml --input_size 448 --lr 0.001 --loss_w 0.2 -pp 1 --csc --imbalanced 0 --path_to_relation /home/samyakr2/SHOP/ARK/co_occurrence_matrix_voc2007.pth
-
-
 ## Training 
 ### MLR 
 Use the following code to learn a model for MLR with Partial Labels
