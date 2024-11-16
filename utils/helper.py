@@ -68,17 +68,8 @@ def mAP(targs, preds):
         # compute average precision
         ap[k] = average_precision(scores, targets)
 
-#         print(scores)
-#         print(targets)
-#         count = sum(1 for value in targets if value > 0)
-
-#         print("Number of values greater than 0:", count)
-#         print('-'*15, count,'-'*15)
-#         if k ==1:
-#             sam
-    # WHY save here ? Will throw error if multiple codes running
     #np.save('/home/samyakr2/SHOP/DualCoOp/output_sb/AP.npy', ap)
-    print('APs', ap)
+    # print('APs', ap)
     return 100 * ap.mean()
 
 
