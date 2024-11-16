@@ -38,10 +38,11 @@ Some Args:
 - `csc`: specify if you want to use class-specific prompts. We suggest to use class-agnostic prompts when `pp` is very small.   
 Please refer to `opts.py` for the full argument list.
 For Example:
+
 ```
 python train.py --config_file configs/models/rn101_ep50.yaml --datadir data/VOC2007/VOCdevkit/VOC2007/ \
---dataset_config_file configs/datasets/voc2007.yaml --input_size 448 --lr 0.001 --loss_w 0.2 -pp 1 --csc \
---imbalanced 0 --path_to_relation co_occurrence_matrix_voc2007.pth
+--dataset_config_file configs/datasets/voc2007.yaml --input_size 448 --lr 0.001 --loss_w 0.2 -pp 1 \
+--csc --imbalanced 0 --path_to_relation co_occurrence_matrix_voc2007.pth
 ```
 
 
