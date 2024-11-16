@@ -1,4 +1,4 @@
-# [Improving Multi-label Recognition using Class Co-Occurrence Probabilities (ICPR 2024)](https://arxiv.org/abs/2404.16193)
+# [Improving Multi-label Recognition using Class Co-Occurrence Probabilities (ICPR 2024, CVPRW 2024)](https://arxiv.org/abs/2404.16193)
 Authors: [Samyak Rawlekar*](https://samyakr99.github.io/), [Shubhang Bhatnagar*](https://shubhangb97.github.io/), [Narendra Ahuja](https://vision.ai.illinois.edu/narendra-ahuja/)
 
 [Paper](https://arxiv.org/abs/2404.16193) | [Project Page](https://shubhangb97.github.io/MLR_gcn/) | [Poster](https://shubhangb97.github.io/MLR_gcn/img/MLR_GCN_poster.pdf) | Slides 
