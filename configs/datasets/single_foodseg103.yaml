@@ -1,9 +1,0 @@
-DATASET:
-  NAME: "single_foodseg103"
-  ROOT: ""
-  VAL_SPLIT: "test_seg"
-  TEST_SPLIT: "test_seg"
-  TRAIN_SPLIT: "train_seg"
-  ZS_TRAIN: ""
-  ZS_TEST: ""
-  ZS_TEST_UNSEEN: ""
