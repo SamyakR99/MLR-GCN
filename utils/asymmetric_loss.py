@@ -64,7 +64,7 @@ class AsymmetricLoss(nn.Module):
     
 
 class AsymmetricLoss_imbalanced(nn.Module):
-    def __init__(self, gamma_neg=4, gamma_pos=1, reweigh_n = 10, dataname = 'dat',clip=0.05, eps=1e-6, disable_torch_grad_focal_loss=True):
+    def __init__(self, cfg, gamma_neg=4, gamma_pos=1, reweigh_n = 10, dataname = 'dat',clip=0.05, eps=1e-6, disable_torch_grad_focal_loss=True):
         super(AsymmetricLoss_imbalanced, self).__init__()
 
         self.gamma_neg = gamma_neg
@@ -75,25 +75,15 @@ class AsymmetricLoss_imbalanced(nn.Module):
         self.eps = eps
         self.softmax = nn.Softmax(dim=1)
         self.dataname = dataname
+        self.cfg = cfg
 
         if torch.cuda.is_available():
             self.device = torch.device("cuda")
         else:
             self.device = torch.device("cpu")
 
-        
-        if self.dataname == 'unimib':
-            self.relation = torch.load('/home/samyakr2/SHOP/ARK/co_occurrence_matrix_unimib.pth').to(self.device)
-             #/ torch.sum(torch.diag(self.relation))
-        elif 'foodseg' in self.dataname:
-            self.relation = torch.load('/home/samyakr2/SHOP/ARK/co_occurrence_matrix_food103.pth').to(self.device)
-        
-        elif 'voc' in self.dataname:
-            self.relation = torch.load('/home/samyakr2/SHOP/ARK/co_occurrence_matrix_voc2007.pth').to(self.device)
-        
-        elif 'coco' in self.dataname:
-            self.relation = torch.load('/home/samyakr2/SHOP/ARK/co_occurrence_matrix_coco.pth').to(self.device)
 
+        self.relation = torch.load(self.cfg.path_to_relation).to(self.device)
         self.unblanced_vector = torch.diag(self.relation)
         
 
